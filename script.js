@@ -1,11 +1,12 @@
 const boxes = document.querySelectorAll(".box");
+// boxes.forEach((box) => {
+//   box.setAttribute("data-clicked", "true");
+// });
 let color = "pink";
 
 boxes.forEach((box) => {
-  let boxClicked = false;
-
   box.addEventListener("click", () => {
-    if (boxClicked) return;
+    if (box.getAttribute("data-clicked") === "true") return;
 
     switch (color) {
       case "pink":
@@ -17,7 +18,7 @@ boxes.forEach((box) => {
         color = "pink";
         break;
     }
-    boxClicked = true;
+    box.setAttribute("data-clicked", "true");
   });
 });
 
@@ -26,6 +27,7 @@ function reset() {
   resetButton.addEventListener("click", () => {
     boxes.forEach((box) => {
       box.classList.remove("box-x", "box-o");
+      box.setAttribute("data-clicked", "false");
     });
   });
 }
