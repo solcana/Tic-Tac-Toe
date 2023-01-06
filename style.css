@@ -1,1 +1,51 @@
-
+body {
+  background-color: rgb(241, 216, 220);
+}
+.game-board {
+  display: grid;
+  grid-template-columns: 120px 120px 120px;
+  grid-template-rows: 120px 120px 120px;
+  justify-content: center;
+  padding: 50px;
+}
+.box {
+  border: 2px solid black;
+  transition: ease-in-out 250ms;
+}
+.box-x {
+  text-align: center;
+  background-color: pink;
+  transition: ease-in-out 150ms;
+}
+.box-o {
+  text-align: center;
+  background-color: blue;
+  transition: ease-in-out 150ms;
+}
+.box:nth-child(1),
+.box:nth-child(2),
+.box:nth-child(3) {
+  border-top: none;
+}
+.box:nth-child(1),
+.box:nth-child(4),
+.box:nth-child(7) {
+  border-left: none;
+}
+.box:nth-child(7),
+.box:nth-child(8),
+.box:nth-child(9) {
+  border-bottom: none;
+}
+.box:nth-child(3),
+.box:nth-child(6),
+.box:nth-child(9) {
+  border-right: none;
+}
+/* .box:hover {
+  background-color: white;
+} */
+header {
+  text-align: center;
+  padding: 10px;
+}
