@@ -20,20 +20,23 @@ button:hover {
   color: hotpink;
 }
 
-#playerX {
+.playerX {
   display: inline;
   text-align: left;
 }
-#playerO {
+.playerO {
   display: inline;
   text-align: right;
 }
-#playerTurn {
-  display: inline;
+.playerTurn {
+  display: inline-block;
   text-align: center;
   margin: 0 40px;
   font-style: italic;
-  font-size: 18px;
+  font-size: 21px;
+}
+.x {
+  color: hotpink;
 }
 .game-board {
   display: grid;
