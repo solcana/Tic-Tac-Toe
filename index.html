@@ -5,27 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tic Tac Toe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Bungee+Shade&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header>
       <h1>Tic Tac Toe</h1>
-      <button class="reset">Reset</button>
-      <button class="reset-score">Reset Score</button>
+      <h2 id="playerX">Player X's Score: 0</h2>
+      <h3 id="playerTurn">Player <span class="turn">X's</span> Turn 🚀</h3>
+      <h2 id="playerO">Player O's Score: 0</h2>
     </header>
     <div class="game-board">
-      <div class="box" id="c1"></div>
-      <div class="box" id="c2"></div>
-      <div class="box" id="c3"></div>
-      <div class="box" id="c4"></div>
-      <div class="box" id="c5"></div>
-      <div class="box" id="c6"></div>
-      <div class="box" id="c7"></div>
-      <div class="box" id="c8"></div>
-      <div class="box" id="c9"></div>
+      <div class="box" id="1"></div>
+      <div class="box" id="2"></div>
+      <div class="box" id="3"></div>
+      <div class="box" id="4"></div>
+      <div class="box" id="5"></div>
+      <div class="box" id="6"></div>
+      <div class="box" id="7"></div>
+      <div class="box" id="8"></div>
+      <div class="box" id="9"></div>
     </div>
     <section>
-      <div class="winningMessage"></div>
+      <button class="reset"><strong>Reset</strong></button>
+      <button class="reset-score"><strong>Reset score</strong></button>
     </section>
 
     <script src="script.js"></script>

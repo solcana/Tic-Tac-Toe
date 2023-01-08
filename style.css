@@ -1,12 +1,46 @@
 body {
-  background-color: rgb(241, 216, 220);
+  background-color: rgb(250, 223, 246);
+}
+header,
+section {
+  text-align: center;
+  padding: 10px;
+  font-size: 18px;
+  font-family: "Bowlby One SC", cursive;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 0 20px;
+  box-shadow: 5px 1px 10px hotpink;
+  font-size: 18px;
+  font-family: "Bowlby One SC", cursive;
+}
+button:hover {
+  color: hotpink;
+}
+
+#playerX {
+  display: inline;
+  text-align: left;
+}
+#playerO {
+  display: inline;
+  text-align: right;
+}
+#playerTurn {
+  display: inline;
+  text-align: center;
+  margin: 0 40px;
+  font-style: italic;
+  font-size: 18px;
 }
 .game-board {
   display: grid;
   grid-template-columns: 120px 120px 120px;
   grid-template-rows: 120px 120px 120px;
   justify-content: center;
-  padding: 50px;
+  padding: 40px;
 }
 .box {
   border: 2px solid black;
@@ -14,7 +48,7 @@ body {
 }
 .box-x {
   text-align: center;
-  background-color: pink;
+  background-color: hotpink;
   transition: ease-in-out 150ms;
 }
 .box-o {
@@ -42,10 +76,9 @@ body {
 .box:nth-child(9) {
   border-right: none;
 }
-/* .box:hover {
-  background-color: white;
+/* .turn {
+  color: hotpink;
 } */
-header {
-  text-align: center;
-  padding: 10px;
-}
+/* .box:hover {
+  background-color: rgb(252, 235, 239);
+} */
