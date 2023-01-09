@@ -16,6 +16,7 @@ button {
   font-size: 18px;
   font-family: "Bowlby One SC", cursive;
   background-color: rgb(246, 251, 251);
+  border-radius: 5px;
 }
 button:hover {
   color: #ff1392;
@@ -36,7 +37,6 @@ button:hover {
   text-align: center;
   margin: 0 40px;
   font-style: italic;
-  font-size: 21px;
 }
 .item-x {
   color: #ff1392;

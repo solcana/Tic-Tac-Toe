@@ -4,6 +4,7 @@ const boxes = document.querySelectorAll(".box");
 let color = "pink";
 let playerX = [];
 let playerO = [];
+let gameOver = false;
 
 // state an array of winning combinations
 const winCombinations = [
@@ -17,33 +18,55 @@ const winCombinations = [
   [3, 5, 7],
 ];
 
-// boxes.forEach((box) => {
-//   box.addEventListener("click", handleBoxClicked);
-// });
+function checkwin() {
+  let playerXWon = winCombinations.some((combination) => {
+    return combination.every((number) => {
+      return playerX.includes(number);
+    });
+  });
+  let playerOWon = winCombinations.some((combination) => {
+    return combination.every((number) => {
+      return playerO.includes(number);
+    });
+  });
+  if (playerXWon) {
+    console.log("Player X won!");
+    playerTurn.innerHTML = "Player <span class='item-x'>X</span> WON 🏆";
+    gameOver = true;
+  } else if (playerOWon) {
+    console.log("Player O won!");
+    playerTurn.innerHTML = "Player <span class='item-o'>O</span> WON 🏆";
+    gameOver = true;
+  } else if (playerX.length + playerO.length === 9) {
+    console.log("It's a tie!");
+    playerTurn.innerHTML = "It's a Tie 🤝";
+    gameOver = true;
+  }
+}
 
 // start the game
 function startGame() {
   color = "pink";
-  playerTurn.innerHTML = "Player <span class='item-x'>X's</span> Turn 🚀";
-
+  playerTurn.innerHTML = "X's Turn";
   //   add event listener to the box clicked
   boxes.forEach((box) => {
     box.addEventListener("click", () => {
+      if (gameOver) {
+        return;
+      }
       if (box.getAttribute("data-clicked") === "true") return;
 
       switch (color) {
         case "pink":
           box.classList.add("box-x");
           color = "blue";
-          playerTurn.innerHTML =
-            "Player <span class='item-o'>O's</span> Turn 🚀";
+          playerTurn.innerHTML = "O's Turn";
           playerX.push(parseInt(box.id));
           break;
         case "blue":
           box.classList.add("box-o");
           color = "pink";
-          playerTurn.innerHTML =
-            "Player <span class='item-x'>X's</span> Turn 🚀";
+          playerTurn.innerHTML = "X's Turn";
           playerO.push(parseInt(box.id));
           break;
       }
@@ -58,47 +81,12 @@ function startGame() {
 // add event listener to reset button
 resetButton.addEventListener("click", reset);
 
-// handle Box clicked function
-// function handleBoxClicked(e) {
-//   let box = +e.target.getAttribute("id");
-//   if (color === "pink") {
-//     color = "blue";
-//     playerX.push(box);
-//   } else {
-//     playerO.push(box);
-//     color = "pink";
-//   }
-//   console.log(playerX);
-//   console.log(playerO);
-//   e.target.removeEventListener("click", handleBoxClicked);
-// }
-
-// handle win / lose / tie
-function checkwin() {
-  let playerXWon = winCombinations.some((combination) => {
-    return combination.every((number) => {
-      return playerX.includes(number);
-    });
-  });
-  let playerOWon = winCombinations.some((combination) => {
-    return combination.every((number) => {
-      return playerO.includes(number);
-    });
-  });
-  if (playerXWon) {
-    console.log("Player X won!");
-  } else if (playerOWon) {
-    console.log("Player O won!");
-  } else if (playerX.length + playerO.length === 9) {
-    console.log("It's a tie!");
-  }
-}
-
 // handle Reset button
 function reset() {
   boxes.forEach((box) => {
     box.classList.remove("box-x", "box-o");
     box.setAttribute("data-clicked", "false");
+    gameOver = false;
     playerX = [];
     playerO = [];
     console.clear();
@@ -107,5 +95,3 @@ function reset() {
 }
 
 startGame();
-
-// handle who's turn it is --> display message Player X's or Player O's turn; or Who wins; Tie;
