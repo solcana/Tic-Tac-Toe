@@ -5,28 +5,31 @@ header,
 section {
   text-align: center;
   padding: 10px;
-  font-size: 18px;
+  font-size: 22px;
   font-family: "Bowlby One SC", cursive;
 }
 
 button {
   padding: 10px 20px;
   margin: 0 20px;
-  box-shadow: 5px 1px 10px hotpink;
+  box-shadow: 5px 1px 10px #ff1392;
   font-size: 18px;
   font-family: "Bowlby One SC", cursive;
+  background-color: rgb(246, 251, 251);
 }
 button:hover {
-  color: hotpink;
+  color: #ff1392;
 }
 
 .playerX {
   display: inline;
   text-align: left;
+  color: #ff1392;
 }
 .playerO {
   display: inline;
   text-align: right;
+  color: blue;
 }
 .playerTurn {
   display: inline-block;
@@ -35,8 +38,11 @@ button:hover {
   font-style: italic;
   font-size: 21px;
 }
-.x {
-  color: hotpink;
+.item-x {
+  color: #ff1392;
+}
+.item-o {
+  color: blue;
 }
 .game-board {
   display: grid;
@@ -51,12 +57,12 @@ button:hover {
 }
 .box-x {
   text-align: center;
-  background-color: hotpink;
+  background-color: #ff1392;
   transition: ease-in-out 150ms;
 }
 .box-o {
   text-align: center;
-  background-color: blue;
+  background-color: #0000ff;
   transition: ease-in-out 150ms;
 }
 .box:nth-child(1),
