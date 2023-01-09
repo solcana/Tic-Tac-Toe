@@ -5,6 +5,8 @@ let color = "pink";
 let playerX = [];
 let playerO = [];
 let gameOver = false;
+let playerXScore = 0;
+let playerOScore = 0;
 
 // state an array of winning combinations
 const winCombinations = [
@@ -30,15 +32,16 @@ function checkwin() {
     });
   });
   if (playerXWon) {
-    console.log("Player X won!");
-    playerTurn.innerHTML = "Player <span class='item-x'>X</span> WON 🏆";
+    playerTurn.innerHTML = "<span class='item-x'>X</span> WON 🏆";
+    playerXScore++;
+    document.querySelector(".playerX").innerHTML = `X's Score: ${playerXScore}`;
     gameOver = true;
   } else if (playerOWon) {
-    console.log("Player O won!");
-    playerTurn.innerHTML = "Player <span class='item-o'>O</span> WON 🏆";
+    playerTurn.innerHTML = "<span class='item-o'>O</span> WON 🏆";
+    playerOScore++;
+    document.querySelector(".playerO").innerHTML = `O's Score: ${playerOScore}`;
     gameOver = true;
   } else if (playerX.length + playerO.length === 9) {
-    console.log("It's a tie!");
     playerTurn.innerHTML = "It's a Tie 🤝";
     gameOver = true;
   }

@@ -1,11 +1,11 @@
 body {
-  background-color: rgb(250, 223, 246);
+  background-color: rgb(244, 216, 249);
 }
 header,
 section {
   text-align: center;
   padding: 10px;
-  font-size: 22px;
+  font-size: 23px;
   font-family: "Bowlby One SC", cursive;
 }
 
@@ -15,7 +15,7 @@ button {
   box-shadow: 5px 1px 10px #ff1392;
   font-size: 18px;
   font-family: "Bowlby One SC", cursive;
-  background-color: rgb(246, 251, 251);
+  background-color: rgb(249, 244, 255);
   border-radius: 5px;
 }
 button:hover {
@@ -38,6 +38,9 @@ button:hover {
   margin: 0 40px;
   font-style: italic;
 }
+.winner {
+  font-size: 25px;
+}
 .item-x {
   color: #ff1392;
 }
@@ -49,21 +52,26 @@ button:hover {
   grid-template-columns: 120px 120px 120px;
   grid-template-rows: 120px 120px 120px;
   justify-content: center;
-  padding: 40px;
+  padding: 15px;
 }
 .box {
   border: 2px solid black;
   transition: ease-in-out 250ms;
 }
+.box:hover {
+  cursor: pointer;
+  background-color: rgb(249, 244, 255);
+}
+
 .box-x {
   text-align: center;
   background-color: #ff1392;
-  transition: ease-in-out 150ms;
+  transition: ease-in-out 250ms;
 }
 .box-o {
   text-align: center;
   background-color: #0000ff;
-  transition: ease-in-out 150ms;
+  transition: ease-in-out 250ms;
 }
 .box:nth-child(1),
 .box:nth-child(2),
