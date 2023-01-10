@@ -4,14 +4,12 @@ body {
 header,
 section {
   text-align: center;
-  padding: 10px;
   font-size: 23px;
   font-family: "Bowlby One SC", cursive;
 }
-
 button {
   padding: 10px 20px;
-  margin: 0 20px;
+  margin: 20px;
   box-shadow: 5px 1px 10px #ff1392;
   font-size: 18px;
   font-family: "Bowlby One SC", cursive;
@@ -37,6 +35,7 @@ button:hover {
   text-align: center;
   margin: 0 40px;
   font-style: italic;
+  font-size: 40px;
 }
 .winner {
   font-size: 25px;
@@ -60,18 +59,17 @@ button:hover {
 }
 .box:hover {
   cursor: pointer;
-  background-color: rgb(249, 244, 255);
+  background-color: rgb(242, 228, 245);
 }
-
 .box-x {
   text-align: center;
   background-color: #ff1392;
-  transition: ease-in-out 250ms;
+  transition: ease-in-out 100ms;
 }
 .box-o {
   text-align: center;
   background-color: #0000ff;
-  transition: ease-in-out 250ms;
+  transition: ease-in-out 100ms;
 }
 .box:nth-child(1),
 .box:nth-child(2),
