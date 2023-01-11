@@ -3,7 +3,9 @@ let resetButton = document.querySelector(".reset");
 let resetScoreButton = document.querySelector(".reset-score");
 let playerTurn = document.querySelector(".playerTurn");
 const boxes = document.querySelectorAll(".box");
-const audio = document.querySelector(".audio");
+const audioClick = document.querySelector(".audio-click");
+const audioTie = document.querySelector(".audio-tie");
+const audioWin = document.querySelector(".audio-win");
 let color = "pink";
 let playerX = [];
 let playerO = [];
@@ -42,15 +44,21 @@ function checkwin() {
     playerTurn.innerHTML = "<span class='item-x'>X</span> WON 🏆";
     playerXScore++;
     document.querySelector(".playerX").innerHTML = `X's Score: ${playerXScore}`;
+    audioWin.currentTime = 0;
+    audioWin.play();
     // game stop since gameOver is true now
     gameOver = true;
   } else if (playerOWon) {
     playerTurn.innerHTML = "<span class='item-o'>O</span> WON 🏆";
     playerOScore++;
+    audioWin.currentTime = 0;
+    audioWin.play();
     document.querySelector(".playerO").innerHTML = `O's Score: ${playerOScore}`;
     gameOver = true;
   } else if (playerX.length + playerO.length === 9) {
     playerTurn.innerHTML = "It's a Tie 🤝";
+    audioTie.currentTime = 0;
+    audioTie.play();
     gameOver = true;
   }
 }
@@ -67,13 +75,13 @@ function startGame() {
         return;
       }
       if (box.getAttribute("data-clicked") === "true") return;
-      audio.currentTime = 0;
-      audio.play();
+      audioClick.currentTime = 0;
+      audioClick.play();
       //   is box is clicked, function stops here.
 
       color = color === "pink" ? "blue" : "pink";
       box.classList.add(color === "pink" ? "box-o" : "box-x");
-      playerTurn.innerHTML = color === "pink" ? "O" : "X";
+      playerTurn.innerHTML = color === "pink" ? "X" : "O";
       color === "pink"
         ? playerO.push(parseInt(box.id))
         : playerX.push(parseInt(box.id));

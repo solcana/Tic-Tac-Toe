@@ -4,7 +4,7 @@ body {
 header,
 section {
   text-align: center;
-  font-size: 23px;
+  font-size: 22px;
   font-family: "Bowlby One SC", cursive;
 }
 button {
@@ -18,6 +18,7 @@ button {
 }
 button:hover {
   color: #ff1392;
+  transform: scale(1.1);
 }
 
 .playerX {
@@ -33,7 +34,7 @@ button:hover {
 .playerTurn {
   display: inline-block;
   text-align: center;
-  margin: 0 40px;
+  margin: 0 35px;
   font-style: italic;
   font-size: 40px;
 }
@@ -51,7 +52,7 @@ button:hover {
   grid-template-columns: 120px 120px 120px;
   grid-template-rows: 120px 120px 120px;
   justify-content: center;
-  padding: 15px;
+  padding: 25px;
 }
 .box {
   border: 2px solid black;
@@ -60,6 +61,7 @@ button:hover {
 .box:hover {
   cursor: pointer;
   background-color: rgb(242, 228, 245);
+  transform: scale(1.02);
 }
 .box-x {
   text-align: center;
@@ -91,9 +93,27 @@ button:hover {
 .box:nth-child(9) {
   border-right: none;
 }
-/* .turn {
-  color: hotpink;
-} */
-/* .box:hover {
-  background-color: rgb(252, 235, 239);
-} */
+
+@media (max-width: 600px) {
+  header,
+  section {
+    font-size: 15px;
+  }
+  button {
+    padding: 1px 3px;
+    margin: 10px;
+    font-size: 16px;
+  }
+  .game-board {
+    grid-template-columns: 60px 60px 60px;
+    grid-template-rows: 60px 60px 60px;
+    padding: 7px;
+  }
+  .playerTurn {
+    font-size: 18px;
+  }
+  /* .box {
+    cursor: default;
+    background-color: initial;
+  } */
+} ;
