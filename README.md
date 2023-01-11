@@ -64,7 +64,13 @@ const winCombinations = [
 ];
 ```
 
-The game is then built on functions that work to start the game, check whether there's a winner or a tie at each click, and reset the game or score board.
+The game is then built on functions that work to start the game, check whether there's a winner or a tie at each click, and reset the game or score board. Game uses ternary operators to switch between pink and blue.
+
+```
+color = color === "pink" ? "blue" : "pink";
+box.classList.add(color === "pink" ? "box-o" : "box-x");
+playerTurn.innerHTML = color === "pink" ? "X" : "O";
+```
 
 #### Winner solution
 
