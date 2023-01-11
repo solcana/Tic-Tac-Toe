@@ -40,7 +40,7 @@ Link to the Game
 ---
 
 - Hover effects
-- Audio effects
+- Audio effects on clicks & wins/ tie
 - Responsive site
 - Scoreboard
 
@@ -48,7 +48,22 @@ Link to the Game
 
 ---
 
-This game uses a constant variable to assign it an array of arrays of all possible winning combinations. The game is then built on functions that work to start the game, check whether there's a winner or a tie at each click, and reset the game or score board.
+This game uses a constant variable to assign it an array of arrays of all possible winning combinations.
+
+```
+const winCombinations = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9],
+  [1, 4, 7],
+  [2, 5, 8],
+  [3, 6, 9],
+  [1, 5, 9],
+  [3, 5, 7],
+];
+```
+
+The game is then built on functions that work to start the game, check whether there's a winner or a tie at each click, and reset the game or score board.
 
 #### Winner solution
 
@@ -79,13 +94,13 @@ if (playerXWon) {
 
 - Finding the right solutions for the winning combinations.
 - Re-factoring the code, still work to be done on that
-- Knowing the right places to place variables within the function; and where a function must be called
+- Knowing the right places to place variables in within the function; and also where in the code a function should be called
 
 #### Bugs
 
 ---
 
-- Site _almost_ fully response
+- Site _*almost*_ fully response
   - the issue is I was not able to remove the hover effects on mobile / tablet versions
   - should work more the size adjustment for smaller screens
 
@@ -94,7 +109,7 @@ if (playerXWon) {
 ---
 
 - General style of the game can be improved
-- Wanted to add confetti animations once a there is a winner
+- Add confetti animations once a there is a winner
 - Adding an AI
 - Using Local Storage to keep data locally
 - Customize tokens
