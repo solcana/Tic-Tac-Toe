@@ -1,4 +1,4 @@
-// state all variables
+// state all variables & manipulate variables using DOM
 let resetButton = document.querySelector(".reset");
 let resetScoreButton = document.querySelector(".reset-score");
 let playerTurn = document.querySelector(".playerTurn");
