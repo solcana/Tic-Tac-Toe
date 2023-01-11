@@ -10,7 +10,8 @@ This is a Tic Tac Toe game, with colors acting as symbols instead of the classic
 
 ---
 
-![Wireframe](/Tic-Tac-Toe-/wireframe/Scannable%20Document%20on%2011%20Jan%202023%2016_58_33.jpg)
+[Wireframe](https://imgur.com/a/m4rpoou)
+
 <br>
 Link to the Game
 
