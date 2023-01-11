@@ -7,6 +7,7 @@ Here, give a short description of the project. It can be a couple of sentences w
 #### Links
 
 Wireframe
+[wireframe](wireframe/Scannable%20Document%20on%2011%20Jan%202023%2016_58_33.jpg)
 <br>
 Link to the Game
 
