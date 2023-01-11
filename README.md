@@ -104,6 +104,8 @@ if (playerXWon) {
 - Site _*almost*_ fully response
   - the issue is I was not able to remove the hover effects on mobile / tablet versions
   - should work more the size adjustment for smaller screens
+- Wireframe displayed as a clickable link rather than an image
+- Couldn't publish my game - github did not allow to click 'save' button to get a link
 
 #### Future improvements
 
