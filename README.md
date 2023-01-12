@@ -10,9 +10,13 @@ This is a Tic Tac Toe game, with colors acting as symbols instead of the classic
 
 ---
 
-![](https://imgur.com/Uo4qzu7.jpg)
+###### Game preview
 
-<br>
+![](https://imgur.com/LejFkx5.jpg)
+
+###### Wireframe
+
+![](https://imgur.com/Uo4qzu7.jpg)
 
 [Game Link](https://solcana.github.io/Tic-Tac-Toe-/)
 
@@ -43,7 +47,8 @@ This is a Tic Tac Toe game, with colors acting as symbols instead of the classic
 
 - Hover effects
 - Audio effects on clicks & wins/ tie
-- Responsive site
+- Confetti for the winner
+- _**Slightly**_ responsive site
 - Scoreboard
 
 #### Approach
@@ -72,6 +77,8 @@ color = color === "pink" ? "blue" : "pink";
 box.classList.add(color === "pink" ? "box-o" : "box-x");
 playerTurn.innerHTML = color === "pink" ? "X" : "O";
 ```
+
+![](https://imgur.com/QU0WFpM.png)
 
 #### Winner solution
 
@@ -109,15 +116,15 @@ if (playerXWon) {
 ---
 
 - Site responsive
-  - should work more the size adjustment for other screens besides iOS screens
-- Couldn't publish my game - github did not allow to click 'save' button to get a link
+  - more work needed on size adjustments
+  - hover effects act weird, which abvious since it's a touch screen, but not sure how to disable them on mobile versions
+  - audio effects also work weird, and with delay
 
 #### Future improvements
 
 ---
 
-- General style of the game can be improved
-- Add confetti animations once a there is a winner
+- Style of the game can be improved
 - Adding an AI
 - Using Local Storage to keep data locally
 - Customize tokens
