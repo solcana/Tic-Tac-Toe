@@ -45,7 +45,7 @@ function checkwin() {
     });
   });
   if (playerXWon) {
-    playerTurn.innerHTML = "<span class='item-x'>X</span> WON 🏆";
+    playerTurn.innerHTML = "<span class='item-x'>X WON 🏆</span>";
     playerXScore++;
     document.querySelector(".playerX").innerHTML = `X's Score: ${playerXScore}`;
     audioWin.currentTime = 0;
@@ -54,7 +54,7 @@ function checkwin() {
     gameOver = true;
     // game stop since gameOver is true now, so no more clicks allowed;
   } else if (playerOWon) {
-    playerTurn.innerHTML = "<span class='item-o'>O</span> WON 🏆";
+    playerTurn.innerHTML = "<span class='item-o'>O WON 🏆</span>";
     playerOScore++;
     audioWin.currentTime = 0;
     audioWin.play();
