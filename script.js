@@ -72,7 +72,7 @@ function checkwin() {
 // start the game
 function startGame() {
   color = "pink";
-  playerTurn.innerHTML = "X";
+  playerTurn.innerHTML = "X's Turn";
   //   add event listener to the box clicked;
   boxes.forEach((box) => {
     box.addEventListener("click", () => {
@@ -87,7 +87,7 @@ function startGame() {
 
       color = color === "pink" ? "blue" : "pink";
       box.classList.add(color === "pink" ? "box-o" : "box-x");
-      playerTurn.innerHTML = color === "pink" ? "X" : "O";
+      playerTurn.innerHTML = color === "pink" ? "X's turn" : "O's turn";
       color === "pink"
         ? playerO.push(parseInt(box.id))
         : playerX.push(parseInt(box.id));
