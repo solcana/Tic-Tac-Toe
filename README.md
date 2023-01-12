@@ -107,9 +107,9 @@ if (playerXWon) {
 
 ---
 
-- Finding the right solutions for the winning combinations.
+- Finding the right solutions for the winning combinations
 - Re-factoring the code, still work to be done on that
-- Knowing the right places to place variables in within the function; and also where in the code a function should be called
+- Knowing the right locations within a function where to place variables; and also where in the code a function should be called
 
 #### Bugs
 
@@ -117,7 +117,7 @@ if (playerXWon) {
 
 - Site responsive
   - more work needed on size adjustments
-  - hover effects act weird, which abvious since it's a touch screen, but not sure how to disable them on mobile versions
+  - hover effects act weird, which is obvious since it's a touch screen, but not sure how to disable them on mobile versions
   - audio effects also work weird, and with delay
 
 #### Future improvements
