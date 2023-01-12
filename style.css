@@ -1,5 +1,5 @@
 body {
-  background-color: rgb(244, 216, 249);
+  background-color: rgb(238, 207, 254);
 }
 header,
 section {
@@ -96,24 +96,25 @@ button:hover {
 @media (max-width: 600px) {
   header,
   section {
-    font-size: 15px;
+    font-size: 18px;
+    padding: 20px 0 40px 0;
   }
   button {
-    padding: 1px 3px;
-    margin: 10px;
+    padding: 5px 10px;
+    margin: 35px 35px;
     font-size: 16px;
   }
   .game-board {
-    grid-template-columns: 60px 60px 60px;
-    grid-template-rows: 60px 60px 60px;
+    grid-template-columns: 100px 100px 100px;
+    grid-template-rows: 100px 100px 100px;
     padding: 7px;
   }
   .playerTurn {
     font-size: 18px;
   }
 }
-/* 
 .confetti {
+  display: none;
   width: 15px;
   height: 15px;
   background-color: #77f24e;
@@ -135,7 +136,7 @@ button:hover {
 .confetti:nth-child(3) {
   background-color: #dff600;
   left: 30%;
-  animation-delay: -2s;
+  animation-delay: -0.5s;
 }
 .confetti:nth-child(4) {
   background-color: #77f24e;
@@ -145,12 +146,12 @@ button:hover {
 .confetti:nth-child(5) {
   background-color: #df00fe;
   left: 50%;
-  animation-delay: -4s;
+  animation-delay: -3s;
 }
 .confetti:nth-child(6) {
   background-color: #dff600;
   left: 60%;
-  animation-delay: -6s;
+  animation-delay: -5s;
 }
 .confetti:nth-child(7) {
   background-color: #77f24e;
@@ -188,4 +189,8 @@ button:hover {
   100% {
     transform: rotateZ(15deg) rotateY(1440deg) translate(10vw, 110vh);
   }
-} */
+}
+
+.show-confetti .confetti {
+  display: block;
+}

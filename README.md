@@ -10,7 +10,7 @@ This is a Tic Tac Toe game, with colors acting as symbols instead of the classic
 
 ---
 
-[Wireframe](https://imgur.com/a/m4rpoou)
+![](https://imgur.com/Uo4qzu7.jpg)
 
 <br>
 Link to the Game
@@ -107,10 +107,8 @@ if (playerXWon) {
 
 ---
 
-- Site _*almost*_ fully response
-  - the issue is I was not able to remove the hover effects on mobile / tablet versions
-  - should work more the size adjustment for smaller screens
-- Wireframe displayed as a clickable link rather than an image
+- Site responsive
+  - should work more the size adjustment for other screens besides iOS screens
 - Couldn't publish my game - github did not allow to click 'save' button to get a link
 
 #### Future improvements
