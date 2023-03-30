@@ -18,7 +18,7 @@ This is a Tic Tac Toe game, with colors acting as symbols instead of the classic
 
 ![](https://imgur.com/Uo4qzu7.jpg)
 
-[Game Link](https://solcana.github.io/Tic-Tac-Toe-/)
+[Game Link](https://solcana.github.io/Tic-Tac-Toe/)
 
 #### Technology
 
