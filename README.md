@@ -34,15 +34,6 @@ https://solcana.github.io/Tic-Tac-Toe/
 
 ---
 
-## Technology
-
-- Javascript
-- jQuery
-- HTML
-- CSS
-
----
-
 ## Brief
 
 Your Tic Tac Toe app must:
