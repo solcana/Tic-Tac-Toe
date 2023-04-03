@@ -12,7 +12,7 @@ https://solcana.github.io/Tic-Tac-Toe/
 
 ---
 
-#### Getting started
+## Getting started
 
 - Clone or download this repo
 - Open the index.html file in your browser of choice to start the game
