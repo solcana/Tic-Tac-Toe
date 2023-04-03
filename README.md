@@ -90,7 +90,8 @@ I kicked off the planning by sketching out the wireframes, user stories and func
       <div class="box" id="8"></div>
       <div class="box" id="9"></div>
     </div>
-    ```
+ ```
+ 
  ```
  .game-board {
   display: grid;
