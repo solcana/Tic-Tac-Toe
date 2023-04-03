@@ -1,37 +1,73 @@
 # Tic-Tac-Toe-
 
-#### Description
+## Description
+
+This is a tic tac toe game where two users can play and get a win, lose or tie. It was built solo in 7 days, using HTML, CSS & Vanilla JS, with colours acting as symbols for the classic “X” and “O”.
 
 ---
 
-This is a Tic Tac Toe game, with colors acting as symbols instead of the classic "X" or "O".
+## Link
 
-#### Links
+https://solcana.github.io/Tic-Tac-Toe/
+
+---
+
+#### Getting started
+
+- Clone or download this repo
+- Open the index.html file in your browser of choice to start the game
 
 ---
 
-###### Game preview
+## Timeframe & Working Team
 
-![](https://imgur.com/LejFkx5.jpg)
-
-###### Wireframe
-
-![](https://imgur.com/Uo4qzu7.jpg)
-
-[Game Link](https://solcana.github.io/Tic-Tac-Toe/)
-
-#### Technology
+7 days, solo project
 
 ---
+
+## Technologies Used
+
+- HTML
+- CSS
+- Vanilla JS
+- Git / Github
+
+---
+
+## Technology
 
 - Javascript
 - jQuery
 - HTML
 - CSS
 
-#### User Stories
+---
+
+## Brief
+
+Your Tic Tac Toe app must:
+- Render a game board in the browser
+- Switch turns between X and O (or whichever markers you select)
+- Visually display which side won if a player gets three in a row, or show a draw if neither player wins
+- Include separate HTML / CSS / JavaScript files
+- Stick with KISS (Keep It Simple Stupid) and DRY (Don't Repeat Yourself) principles
+- Use JavaScript for DOM manipulation
+- Deploy your game online, where the rest of the world can access it
+- You can use GitHub Pages for deploying your project
+- Use semantic markup for HTML and CSS (adhere to best practices)
+- Have well-formatted, and well-commented code
 
 ---
+
+## Planning
+
+I kicked off the planning by sketching out the wireframes, user stories and functionalities. You can find them attached below.
+
+#### Wireframe
+
+![](https://imgur.com/Uo4qzu7.jpg)
+
+#### User Stories
 
 - As a user, I should be able to start a new tic tac toe game
 - As a user, I should be able to click on a square to add X first and then O, and so on
@@ -41,21 +77,40 @@ This is a Tic Tac Toe game, with colors acting as symbols instead of the classic
 - As a user, I should not be able to continue playing once I win, lose, or tie
 - As a user, I should be able to play the game again without refreshing the page
 
-#### Bonus Features
+#### Preview
+
+![](https://imgur.com/LejFkx5.jpg)
 
 ---
 
-- Hover effects
-- Audio effects on clicks & wins/ tie
-- Confetti for the winner
-- _**Slightly**_ responsive site
-- Scoreboard
+## Build / Code Process
 
-#### Approach
+- I started off by creating the grid for my game, which I did using simple HTML markup, and CSS grid layout system.
 
----
+```
+ <div class="game-board">
+      <div class="box" id="1"></div>
+      <div class="box" id="2"></div>
+      <div class="box" id="3"></div>
+      <div class="box" id="4"></div>
+      <div class="box" id="5"></div>
+      <div class="box" id="6"></div>
+      <div class="box" id="7"></div>
+      <div class="box" id="8"></div>
+      <div class="box" id="9"></div>
+    </div>
+    ```
+ ```
+ .game-board {
+  display: grid;
+  grid-template-columns: 120px 120px 120px;
+  grid-template-rows: 120px 120px 120px;
+  justify-content: center;
+  padding: 25px;
+}
+```
 
-This game uses a constant variable to assign it an array of arrays of all possible winning combinations.
+- After some tinkering with the styling, I moved on to the game’s functionality. Here I took the approach of using a constant variable to assign it an array of all possible winning combinations.
 
 ```
 const winCombinations = [
@@ -70,21 +125,22 @@ const winCombinations = [
 ];
 ```
 
-The game is then built on functions that work to start the game, check whether there's a winner or a tie at each click, and reset the game or score board. Game uses ternary operators to switch between pink and blue.
+- The game is then built on functions that work to start the game, check whether there's a winner or a tie at each click, and reset the game or score board. The game uses ternary operators to switch between pink and blue. 
 
 ```
 color = color === "pink" ? "blue" : "pink";
-box.classList.add(color === "pink" ? "box-o" : "box-x");
-playerTurn.innerHTML = color === "pink" ? "X" : "O";
-```
-
-![](https://imgur.com/QU0WFpM.png)
-
-#### Winner solution
-
----
-
-Each clicked box's index is extracted and pushed into an array representing either PlayerX's or PlayerO's clicks. Both arrays are then looped through (using some(), every(), & includes() methods),and checked for matches with any of the winning combinations arrays.
+      box.classList.add(color === "pink" ? "box-o" : "box-x");
+      playerTurn.innerHTML = color === "pink" ? "X's turn" : "O's turn";
+      color === "pink"
+        ? playerO.push(parseInt(box.id))
+        : playerX.push(parseInt(box.id));
+      // pushes clicked box nr into PlayerX or PlayerO array and converts into integer - what we need to be able to compare winning combos to these two arrays
+      box.setAttribute("data-clicked", "true");
+      box.style.pointerEvents = "none";
+      checkwin();
+  ```
+ 
+ - To check for the winner, each clicked box's index is extracted and pushed into an array representing either PlayerX's or PlayerO's clicks. Both arrays are then looped through (using some(), every(), & includes() methods),and checked for matches with any of the winning combinations arrays.
 
 ```
 let playerOWon = winCombinations.some((combination) => {
@@ -93,45 +149,79 @@ let playerOWon = winCombinations.some((combination) => {
     });
 ```
 
-The first one that matches, results in a gameOver = true, preventing additional clicks; a message displaying the winner; and an updated scoreboard. A tie message is displayed in cases of no winner.
+- The first one that matches, results in a gameOver = true, preventing additional clicks; a message displaying the winner; and an updated scoreboard. A tie message is displayed in cases of no winner.
 
 ```
 if (playerXWon) {
-    playerTurn.innerHTML = "<span class='item-x'>X</span> WON 🏆";
+    playerTurn.innerHTML = "<span class='item-x'>X WON 🏆</span>";
     playerXScore++;
     document.querySelector(".playerX").innerHTML = `X's Score: ${playerXScore}`;
+    audioWin.currentTime = 0;
+    audioWin.play();
+    document.querySelector(".container").classList.add("show-confetti");
     gameOver = true;
-```
+    // game stop since gameOver is true now, so no more clicks allowed;
+  } else if (playerOWon) {
+    playerTurn.innerHTML = "<span class='item-o'>O WON 🏆</span>";
+    playerOScore++;
+    audioWin.currentTime = 0;
+    audioWin.play();
+    document.querySelector(".playerO").innerHTML = `O's Score: ${playerOScore}`;
+    document.querySelector(".container").classList.add("show-confetti");
+    gameOver = true;
+  } else if (playerX.length + playerO.length === 9) {
+    playerTurn.innerHTML = "It's a Tie 🤝";
+    audioTie.currentTime = 0;
+    audioTie.play();
+    gameOver = true;
+  }
+  ```
 
-#### Challenges
+## Bonus Features
 
 ---
+
+- Hover effects
+- Audio effects on clicks & wins/ tie
+- Confetti for the winner
+- _**Slightly**_ responsive site
+- Scoreboard
+
+---
+
+## Challenges
 
 - Finding the right solutions for the winning combinations
-- Re-factoring the code, still work to be done on that
+- Refactoring the code, still work to be done on that, and due to time constraings
 - Knowing the right locations within a function where to place variables; and also where in the code a function should be called
 
-#### Bugs
+---
+
+## Wins
+
+Having a first coding project ever done and completed, all on my own, using technologies relatively new to me felt like a huge win. All in all, it was both a stressful but also exciting period, and I was quite happy with how it turned out in the end. 
 
 ---
+
+## Key takeaways
+
+To not spend endless hours on things that are not nearly as important for the beginning. Rather focus on a working MVP, and then slowly adding more features.
+
+---
+
+## Bugs
 
 - Site responsive
   - more work needed on size adjustments
   - hover effects act weird, which is obvious since it's a touch screen, but not sure how to disable them on mobile versions
   - audio effects also work weird, and with delay
+  
+  ---
 
-#### Future improvements
-
----
+## Future improvements
 
 - Style of the game can be improved
 - Adding an AI
 - Using Local Storage to keep data locally
 - Customize tokens
 - Re-do the whole game using OOP
-
-#### Key takeaways
-
----
-
-To not spend endless hours on things that are not nearly as important for the beginning. Rather focus on a working MVP, and then slowly adding more features.
