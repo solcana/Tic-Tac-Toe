@@ -184,7 +184,7 @@ if (playerXWon) {
 ## Challenges
 
 - Finding the right solutions for the winning combinations
-- Refactoring the code, still work to be done on that, and due to time constraings
+- Refactoring the code, still work to be done on that, and due to time constraints
 - Knowing the right locations within a function where to place variables; and also where in the code a function should be called
 
 ---
